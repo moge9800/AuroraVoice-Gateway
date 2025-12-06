@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <title>AuroraVoice 控制台</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header class="app-header">
+        <h1>AuroraVoice Gateway</h1>
+        <p>自定义 REST 风格的多语种 TTS 网关 Demo</p>
+      </header>
+
+      <main class="app-main">
+        <section class="panel">
+          <label>
+            服务地址
+            <input id="base-url" placeholder="https://your-worker.workers.dev" />
+          </label>
+
+          <label>
+            API Key（可选）
+            <input id="api-key" placeholder="X-Api-Key" />
+          </label>
+
+          <label>
+            文本内容
+            <textarea
+              id="text-input"
+              rows="5"
+              placeholder="在这里输入要朗读的文本"
+            ></textarea>
+          </label>
+
+          <div class="row">
+            <label>
+              语音
+              <select id="voice-select"></select>
+            </label>
+            <label>
+              语速
+              <input id="speed-range" type="range" min="-1" max="2" step="0.1" value="1" />
+              <span id="speed-value">1.0</span>
+            </label>
+          </div>
+
+          <div class="row">
+            <label>
+              语气
+              <select id="tone-select">
+                <option value="neutral">中性</option>
+                <option value="warm">亲切</option>
+                <option value="news">新闻播报</option>
+              </select>
+            </label>
+            <label>
+              格式
+              <select id="format-select">
+                <option value="mp3">MP3</option>
+                <option value="ogg">OGG</option>
+                <option value="wav">WAV</option>
+              </select>
+            </label>
+          </div>
+
+          <button id="synthesize-btn">开始合成</button>
+        </section>
+
+        <section class="panel">
+          <h2>播放与历史</h2>
+          <audio id="audio-player" controls></audio>
+          <ul id="history-list"></ul>
+        </section>
+      </main>
+    </div>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
