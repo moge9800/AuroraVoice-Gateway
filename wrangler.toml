@@ -1,0 +1,16 @@
+name = "aurora-voice-gateway"
+main = "src/index.ts"
+compatibility_date = "2024-12-31"
+miniflare = true
+workers_dev = true
+
+[vars]
+# 可选：对外自定义 API 密钥，用逗号分隔多个
+ALLOWED_API_KEYS = "demo-key-1,demo-key-2"
+
+# Edge TTS 相关参数（仅示意，需根据你实际的调用方式填写）
+EDGE_REGION = "southeastasia"
+EDGE_VOICE_DEFAULT = "zh-CN-XiaoxiaoNeural"
+
+[observability]
+enabled = true
