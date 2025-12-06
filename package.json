@@ -1,0 +1,14 @@
+{
+  "name": "aurora-voice-gateway",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler publish",
+    "build": "wrangler deploy --dry-run"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.0",
+    "wrangler": "^3.80.0"
+  }
+}
